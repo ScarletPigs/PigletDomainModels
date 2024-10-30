@@ -1,12 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Piglet_Domain_Models.Models
+namespace Piglet_Domain_Models.DTOs.Event
 {
-    public class Event
+    public class CreateEventDTO
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required, MaxLength(33)]
         public required string Name { get; set; }
 
@@ -14,24 +16,12 @@ namespace Piglet_Domain_Models.Models
         public required string CreatorDiscordUsername { get; set; }
 
         [MaxLength(12)]
-        public string? Author { get; set; }
-
-        [MaxLength(300)]
         public string? Description { get; set; }
-
-        [Required]
-        public required DateTime CreatedAt { get; set; }
-
-        [Required]
-        public required DateTime LastModified { get; set; }
 
         [Required]
         public required DateTime StartTime { get; set; }
 
         [Required]
         public required DateTime EndTime { get; set; }
-        
-
-
     }
 }
