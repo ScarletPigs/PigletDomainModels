@@ -1,23 +1,36 @@
-﻿namespace Piglet_Domain_Models.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Piglet_Domain_Models.Models
 {
     public class Event
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Author { get; set; }
-        public string CreatorDiscordUsername { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime LastModified { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        [Required, Key]
+        public required int Id { get; set; }
+
+        [Required, MaxLength(33)]
+        public required string Name { get; set; }
+
+        [Required]
+        public required string CreatorDiscordUsername { get; set; }
+
+        [MaxLength(12)]
+        public string? Author { get; set; }
+
+        [MaxLength(300)]
+        public string? Description { get; set; }
+
+        [Required]
+        public required DateTime CreatedAt { get; set; }
+
+        [Required]
+        public required DateTime LastModified { get; set; }
+
+        [Required]
+        public required DateTime StartTime { get; set; }
+
+        [Required]
+        public required DateTime EndTime { get; set; }
         
-
-
-
-
-        public EventType EventType { get; set; }
-        public ModList ModList { get; set; }
 
 
     }
