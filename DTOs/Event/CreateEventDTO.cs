@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Piglet_Domain_Models.DTOs.Event
 {
@@ -16,6 +11,9 @@ namespace Piglet_Domain_Models.DTOs.Event
         public required string CreatorDiscordUsername { get; set; }
 
         [MaxLength(12)]
+        public string? Author { get; set; }
+
+        [MaxLength(150)]
         public string? Description { get; set; }
 
         [Required]
